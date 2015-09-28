@@ -21,6 +21,7 @@ Prerequisites
 
 
    You will need the `libcloud`_ package installed on your Arbiter server.
+   Note: The current libcloud release (0.18.0) doesn't support EU-Central-1(Frankfurt), but it is fixed. So you could fork it and load it from the repo.
   
 
 
