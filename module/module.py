@@ -110,7 +110,8 @@ class AWS_importer_arbiter(BaseModule):
             if self.default_template:
                 tags.append(self.default_template)
             tags.append('EC2')
-            # Append the instance id to the name since AWS allows for Name to be duplicated across instances
+            # Append the instance id to the name since AWS allows for Name to be duplicated across
+            # instances
             h['host_name'] = unicode(n.name + "_" + n.id)
             
             # Now the network part, try to get some :)
