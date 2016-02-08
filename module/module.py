@@ -115,14 +115,14 @@ class AWS_importer_arbiter(BaseModule):
             
             # Now the network part, try to get some :)
             try:
-                h['_EC2_PRIVATE_IP'] = unicode(n.private_ips[0])
-            except IndexError:
-                h['_EC2_PRIVATE_IP'] = u''
-            try:
                 h['_EC2_PUBLIC_IP'] = unicode(n.public_ips[0])
             except IndexError:
                 h['_EC2_PUBLIC_IP'] = u''
-            
+            try:
+                h['_EC2_PRIVATE_IP'] = unicode(n.private_ips[0])
+            except IndexError:
+                h['_EC2_PRIVATE_IP'] = u''
+
             # use public ip, else fall back to private one
             if h['_EC2_PUBLIC_IP']:
                 h['address'] = h['_EC2_PUBLIC_IP']
